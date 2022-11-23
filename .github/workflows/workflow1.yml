@@ -27,4 +27,5 @@ jobs:
         run: kubectl apply -f flaskex-deploy.yaml
         
       - name: Create a Service
-        run: kubectl expose deployment flaskex-deploy --name=flaskex-svc --type=LoadBalancer --port=80 --target-port=5000 --dry-run -o yaml | kubectl apply -f
+        run: kubectl expose deployment flaskex-deploy --name=flaskex-svc --type=LoadBalancer --port=80 --target-port=5000 --dry-run -o yaml | kubectl apply -f -
+        
