@@ -23,5 +23,6 @@ jobs:
           token:      ${{ secrets.K8S_SA_TOKEN }}
           namespace:  default
           
-      - name: Check kubectl
-        run: kubectl get pods -A 
+      - name: Create deployment
+        run: kubectl apply -f flaskex-deploy.yaml
+        
