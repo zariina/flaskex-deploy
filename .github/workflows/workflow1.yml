@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,4 +23,5 @@ jobs:
           token:      ${{ secrets.K8S_SA_TOKEN }}
           namespace:  default
           
-          
+      - name: Check kubectl
+        run: kubectl get pods -A 
